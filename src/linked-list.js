@@ -2,7 +2,7 @@ const Node = require('./node');
 
 class LinkedList {
     constructor() {
-		this.length = 0;
+	this.length = 0;
         this.head = null;
         this.tail = null;	
 	}
@@ -17,7 +17,7 @@ class LinkedList {
 
     tail() {
 		
-		return this.tail ? this.tail.data : null;
+	return this.tail ? this.tail.data : null;
 	}
 
     at(index) {}
