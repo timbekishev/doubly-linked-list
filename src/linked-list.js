@@ -8,7 +8,15 @@ class LinkedList {
 	}
 
     append(data) { // добавление в конец
-	
+		var a = new Node (data);
+		if (this._head === null && this._tail === null) {
+			this._head = a;
+			this._tail = a;
+			return;
+		}
+		this._tail.next(a);
+		this._tail = a;
+		
 	}
 
     head() {
