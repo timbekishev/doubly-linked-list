@@ -7,7 +7,7 @@ class LinkedList {
         this._tail = null;	
 	}
 
-    append(data) { // добавление в конец
+    append(data) {
 		var a = new Node (data);
 		if (this._head === null && this._tail === null) {
 			this._head = a;
@@ -62,7 +62,7 @@ class LinkedList {
 			
 		}
 		return a.data;
-	} //тоже цикл по счетчику, только текущему законсить
+	}
 
     isEmpty() {
 		if (this._head == null)
@@ -79,7 +79,28 @@ class LinkedList {
     	return this;
 	}
 
-    deleteAt(index) {}
+    deleteAt(index) {
+		var a = this._head
+		var b = 0;
+
+		if (index >= this.length)
+    		return -1;
+    	else
+	    	while (b < this.length) {
+	    		if (index == b) {
+    				if (a.prev != null) 
+						a.prev.next = a.next;
+    				if (a.next != null)
+						a.next.prev = a.prev;
+	    			this.length--;
+	    			break;
+	    		}
+	    		a = a.next;
+	    		b++;
+	    	}
+			
+		return this;
+	}
 
     reverse() {}
 
@@ -89,13 +110,12 @@ class LinkedList {
 
     	while (b < this.length) {
     		if (a.data == data) 
-    			return i;
+    			return b;
     		a = a.next;
     		b++;
     	}
-
-    	return -1;
-    }
+			return -1;
+	}
 }
 
 module.exports = LinkedList;
