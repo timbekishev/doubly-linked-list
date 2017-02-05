@@ -26,11 +26,15 @@ class LinkedList {
     head() {
 		if (this._head != null)
     	return this._head.data;
+		else
+    		return null;
     }
 
     tail() {	
 		if (this._head != null)
-    	return this._tail.data;	
+    	return this._tail.data;
+		else
+    		return null;
 	}
 
     at(index) { 
@@ -51,10 +55,10 @@ class LinkedList {
 	}
 
     clear() {		
-		this._head = null;
-		this._tail = null;
-		this.length = 0;
-		
+		this._head = this._tail = null;
+    	this.length = 0;
+
+    	return this;
 	}
 
     deleteAt(index) {}
