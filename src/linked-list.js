@@ -33,10 +33,17 @@ class LinkedList {
     	return this._tail.data;	
 	}
 
-    at(index) { // возвращает данные по индексу
+    at(index) { 
+		var a = this._head; 
+		var b = 0;
+		while (b < this.length) {
+			this._head = a.next;
+			b++;
+		}
+		return a.data;
 	}
 
-    insertAt(index, data) {}
+    insertAt(index, data) {} //тоже цикл по счетчику, только текущему законсить
 
     isEmpty() {
 		return this._head === null;
@@ -44,7 +51,10 @@ class LinkedList {
 	}
 
     clear() {		
-        	
+		this._head = null;
+		this._tail = null;
+		this.length = 0;
+		
 	}
 
     deleteAt(index) {}
