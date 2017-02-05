@@ -11,12 +11,16 @@ class LinkedList {
 		var a = new Node (data);
 		if (this._head === null && this._tail === null) {
 			this._head = a;
+			this._tail = a;			
+		} else (this.length > 0); {
+			var b = this._tail;
 			this._tail = a;
-			return;
+			this._tail.prev = b;
+	    	this._tail.prev.next = this._tail;
+			this.length++;
 		}
-		this._tail.next(a);
-		this._tail = a;
-		// нужно ещё добавить данные в конец списка
+				
+		return this;		
 	}
 
     head() {
@@ -30,8 +34,6 @@ class LinkedList {
 	}
 
     at(index) { // возвращает данные по индексу
-		
-		
 	}
 
     insertAt(index, data) {}
