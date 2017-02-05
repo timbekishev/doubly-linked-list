@@ -41,7 +41,9 @@ class LinkedList {
 		var a = this._head; 
 		var b = 0;
 		while (b < this.length) {
-			this._head = a.next;
+			if (index == b) 
+				return a.data;
+			a = a.next;
 			b++;
 		}
 		return a.data;
@@ -50,12 +52,15 @@ class LinkedList {
     insertAt(index, data) {} //тоже цикл по счетчику, только текущему законсить
 
     isEmpty() {
-		return this._head === null;
-		return this._tail === null;
+		if (this._head == null)
+			return true;
+		else
+			return false;
 	}
 
     clear() {		
-		this._head = this._tail = null;
+		this._head = null;
+		this._tail = null;
     	this.length = 0;
 
     	return this;
