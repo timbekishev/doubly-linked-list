@@ -49,7 +49,20 @@ class LinkedList {
 		return a.data;
 	}
 
-    insertAt(index, data) {} //тоже цикл по счетчику, только текущему законсить
+    insertAt(index, data) {
+		var a = this._head; 
+		var b = 0;
+		while (b < this.length) {
+			if (index == b) {
+				a.data = data;
+				break;
+			}
+			a = a.next;
+			b++;
+			
+		}
+		return a.data;
+	}
 
     isEmpty() {
 		if (this._head == null)
