@@ -62,7 +62,7 @@ class LinkedList {
 			
 		}
 		return a.data;
-	}
+	} //тоже цикл по счетчику, только текущему законсить
 
     isEmpty() {
 		if (this._head == null)
@@ -83,7 +83,19 @@ class LinkedList {
 
     reverse() {}
 
-    indexOf(data) {}
+    indexOf(data) {
+		var a = this._head;
+		var b = 0;
+
+    	while (b < this.length) {
+    		if (a.data == data) 
+    			return i;
+    		a = a.next;
+    		b++;
+    	}
+
+    	return -1;
+    }
 }
 
 module.exports = LinkedList;
