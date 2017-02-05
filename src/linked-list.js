@@ -16,21 +16,17 @@ class LinkedList {
 		}
 		this._tail.next(a);
 		this._tail = a;
-		
+		// нужно ещё добавить данные в конец списка
 	}
 
     head() {
 		if (this._head != null)
-    		return this._head.data;
-    	else
-    		return null;
+    	return this._head.data;
     }
 
     tail() {	
 		if (this._head != null)
-    		return this._tail.data;
-    	else 
-    		return null;  	
+    	return this._tail.data;	
 	}
 
     at(index) { // возвращает данные по индексу
@@ -41,15 +37,12 @@ class LinkedList {
     insertAt(index, data) {}
 
     isEmpty() {
-		if (this.lenght == 0) 
-		return true || false;
+		return this._head === null;
+		return this._tail === null;
 	}
 
-    clear() {
-		this.length = 0;
-        this._head = null;
-        this._tail = null;
-        return this;		
+    clear() {		
+        	
 	}
 
     deleteAt(index) {}
