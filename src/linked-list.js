@@ -13,16 +13,16 @@ class LinkedList {
 
     head() {
 		if (this._head != null)
-    	return this._head.data;
-    	else
-    		return null; 
-	}
-
-    tail() {
-		if (this._tail != null)
-    		return this._tail.data;
+    		return this._head.data;
     	else
     		return null;
+    }
+
+    tail() {	
+		if (this._head != null)
+    		return this._tail.data;
+    	else 
+    		return null;  	
 	}
 
     at(index) { // возвращает данные по индексу
@@ -34,9 +34,7 @@ class LinkedList {
 
     isEmpty() {
 		if (this.lenght == 0) 
-			return true 
-		else 
-			return false;			
+		return true || false;
 	}
 
     clear() {
